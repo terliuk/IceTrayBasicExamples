@@ -9,14 +9,13 @@ parser.add_option("-n", "--nevents",type=int, default=1,
 parser.add_option("-o", "--outfile", type=str,default="output.i3.bz2",
                   dest="OUTFILE", help = "Name of outfile ")
 
-problem = ""
 (options,args) = parser.parse_args()
 if len(args) != 0:
         message = "Got undefined options:"
         for a in args:
                 message += a
                 message += " "
-        parser.error(problem)
+        parser.error(message)
 # creating tray
 from icecube import icetray, dataio
 tray = icetray.I3Tray()
