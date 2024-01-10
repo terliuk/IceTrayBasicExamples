@@ -41,7 +41,8 @@ tray.AddModule(AveragingModule,
 from ExampleModules import AveragingFunction
 tray.AddModule(AveragingFunction, 
                Input="RandomVector",
-               Output ="AverageFromModule"
+               Output ="AverageFromFunction", 
+               Streams = [icetray.I3Frame.DAQ]
                )
 ### Module that writes the output
 tray.AddModule("I3Writer","writer",
